@@ -64,7 +64,7 @@ const userController = {
         .catch(err => res.status(400).json(err));
     },
 
-    addFriend ({ params, body }, res) {
+    addFriend ({ params}, res) {
            User.findOneAndUpdate(
             { _id: params.userId },
             { $addToSet: { friends: params.friendId } },
@@ -83,10 +83,10 @@ const userController = {
     removeFriend ({ params }, res) {
       User.findOneAndUpdate(
         { _id: params.userId },
-        { $pull: { users: { friends: params.id } } },
+        { $pull: { users: { friends: params.friendId } } },
         { new: true }
       )
-        .then(dbPizzaData => res.json(dbPizzaData))
+        .then(dbUserData => res.json(dbUserData))
         .catch(err => res.json(err));
     },
 

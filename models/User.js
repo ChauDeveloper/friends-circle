@@ -8,8 +8,8 @@ const FriendSchema = new Schema({
    },
    userName: {
     type: String,
-    ref: 'User'
-  }
+    required: true,
+  },
 },
 {
   toJSON: {
@@ -43,12 +43,12 @@ const UserSchema = new Schema({
       }
       
     ],
-    friends: [FriendSchema],
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (createdAtVal) => dateFormat(createdAtVal)
-    },
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      }
+    ],
   },
   {
     toJSON: {

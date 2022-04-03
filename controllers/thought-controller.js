@@ -35,6 +35,7 @@ const thoughtController = {
         })
         .catch(err => res.json(err));
     },
+    
     removeReaction({ params }, res) {
         Thought.findOneAndUpdate(
           { _id: params.thoughtId },

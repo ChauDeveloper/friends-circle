@@ -1,23 +1,23 @@
 const { Schema, model, Types } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const FriendSchema = new Schema({
-   friendId:{
-    type: Schema.Types.ObjectId,
-    default: () => new Types.ObjectId()
-   },
-   userName: {
-    type: String,
-    required: true,
-  },
-},
-{
-  toJSON: {
-    virtuals: true,
-    getters: true
-  },
-  id: false
-})
+// const FriendSchema = new Schema({
+//    friendId:{
+//     type: Schema.Types.ObjectId,
+//     default: () => new Types.ObjectId()
+//    },
+//    userName: {
+//     type: String,
+//     required: true,
+//   },
+// },
+// {
+//   toJSON: {
+//     virtuals: true,
+//     getters: true
+//   },
+//   id: false
+// })
 
 const UserSchema = new Schema({
     userName: {

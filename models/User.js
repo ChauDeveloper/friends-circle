@@ -1,4 +1,4 @@
-const { Schema, model, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const UserSchema = new Schema({
@@ -13,9 +13,9 @@ const UserSchema = new Schema({
       required: true,
       unique: true, 
       trim: true,
-      validate: {
-        isEmail: true
-      }
+      // validate: {
+      //   isEmail: true
+      // }
     },
     thoughts: [
       {

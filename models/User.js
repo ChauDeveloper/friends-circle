@@ -1,6 +1,7 @@
 const { Schema, model, Thought } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
+
 const UserSchema = new Schema({
     userName: {
       type: String,

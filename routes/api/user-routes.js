@@ -20,7 +20,7 @@ router
     .get(getUserById)
     .put(updateUser)
     .delete(deleteUser)
-    .put(addFriend)
+    .post(addFriend)
     
 
 router

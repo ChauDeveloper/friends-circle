@@ -36,8 +36,9 @@ const ThoughtSchema = new Schema({
     thoughtText: {
         type: String,
         required: true,
-        minLength: 1,
-        maxLength: 280
+        trim:true,
+        // minLength: 1,
+        // maxLength: 280
     },
     createdAt: {
         type: Date,
